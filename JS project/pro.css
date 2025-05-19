@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+    min-height: 100vh;
+    padding: 30px 10px;
+    color: #333;
+}
+
+/* Animate gradient */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container Card */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: black 2px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #262626;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: Cursive;
+    color: #194f0e;
+}
+
+/* Search Box */
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 12px;
+    background: #d62976;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c2185b;
+}
+
+/* Post Feed */
+#feed {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.post {
+    border-radius: 12px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.post p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Actions Buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    flex: 1;
+    font-size: 14px;
+}
+
+.actions .like-btn {
+    background-color: #e1306c;
+}
+
+.actions .like-btn.liked {
+    background-color: #962fbf;
+}
+
+.actions .edit-btn {
+    background-color: #fa7e1e;
+}
+
+.actions .delete-btn {
+    background-color: #ff3e4d;
+}
+
+/* Comments Section */
+.comments {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.comments ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.comment-input {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.comment-input button {
+    background-color: #00b894;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
+
+/* POST Container with CSS Grid */
+.post {
+    display: grid;
+    grid-template-areas:
+        "image"
+        "caption"
+        "actions"
+        "comments";
+    gap: 12px;
+    background-color: #000;
+    /* BLACK */
+    color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid areas */
+.post img {
+    grid-area: image;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.post p {
+    grid-area: caption;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Actions stay the same */
+.actions {
+    grid-area: actions;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    flex: 1;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+/* COMMENT container in GREEN with white text */
+.comments {
+    grid-area: comments;
+    background-color: #2ecc71;
+    /* GREEN */
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.comments ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.comment-input {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.comment-input button {
+    background-color: #27ae60;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.inst-img{
+    height: 100px;
+    width: 100px;
+}

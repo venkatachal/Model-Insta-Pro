@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Instagram (Enhanced)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg?ga=GA1.1.751040088.1747675271&semt=ais_hybrid&w=740" class="inst-img"/></br> 
+        Mini Instagram</h1>
+
+        <input type="text" id="searchInput" placeholder="🔍 Filter by caption..." oninput="filterPosts()">
+
+        <div class="form">
+            <input type="text" id="imageUrl" placeholder="Image URL (optional)">
+            <input type="text" id="caption" placeholder="Write a caption...">
+            <button onclick="createPost()">Post</button>
+        </div>
+
+        <div id="feed"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
